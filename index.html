@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discombobulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./main.css" />
+</head>
+<body>
+  <div class="wrap">
+  <div class="bar">
+    <div class="left">
+      <div class="t">DISCOMBOBULATOR</div>
+    </div>
+    <div class="btns">
+      <button type="button" id="btnLoad">LOAD</button>
+      <input type="file" id="imger" accept="image/*" />
+      <button type="button" id="btnSeed">CHAOS</button>
+      <button type="button" id="btnReset">RESET</button>
+      <button type="button" id="btnDl">DOWNLOAD</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="settings-col">
+      <div class="controls" id="controls">
+        <div class="field span-2">
+          <div class="row"><span>SEED</span><span class="val" id="seedValue"></span></div>
+          <input type="range" id="seed" min="0" max="99999" value="1337" step="1" />
+        </div>
+
+        <div class="field span-2">
+          <div class="row"><span>POWER</span><span class="val" id="powerValue"></span></div>
+          <input type="range" id="power" min="0" max="100" value="75" step="1" />
+        </div>
+
+        <div class="field">
+          <div class="row"><span>WARP X</span><span class="val" id="dispxValue"></span></div>
+          <input type="range" id="dispx" min="0" max="80" value="50" step="1" />
+        </div>
+
+        <div class="field">
+          <div class="row"><span>WARP Y</span><span class="val" id="dispyValue"></span></div>
+          <input type="range" id="dispy" min="0" max="80" value="44" step="1" />
+        </div>
+
+        <div class="field">
+          <div class="row"><span>CHUNK</span><span class="val" id="chunkValue"></span></div>
+          <input type="range" id="chunk" min="2" max="64" value="14" step="1" />
+        </div>
+
+        <div class="field">
+          <div class="row"><span>TEAR</span><span class="val" id="tearValue"></span></div>
+          <input type="range" id="tear" min="0" max="100" value="55" step="1" />
+        </div>
+
+        <div class="field">
+          <div class="row"><span>RGB SPLIT</span><span class="val" id="rgbValue"></span></div>
+          <input type="range" id="rgb" min="0" max="30" value="10" step="1" />
+        </div>
+
+        <div class="field">
+          <div class="row"><span>GRAIN</span><span class="val" id="grainValue"></span></div>
+          <input type="range" id="grain" min="0" max="100" value="18" step="1" />
+        </div>
+
+        <div class="field span-2">
+          <div class="row"><span>BLEND</span><span class="val" id="blendValue"></span></div>
+          <input type="range" id="blend" min="0" max="100" value="100" step="1" />
+        </div>
+
+        <div class="field span-2">
+          <div class="row">
+            <span>EXTRA</span>
+            <div class="toggles inline">
+            <label><input type="checkbox" id="blockToggle" />BLOCK</label>
+            <label><input type="checkbox" id="sortToggle" />SORT</label>
+            <label><input type="checkbox" id="smearToggle" />SMEAR</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-col">
+      <div class="stage-canvas-wrap empty" id="stageWrap">
+        <canvas id="imgresult"></canvas>
+      </div>
+      <div class="meta">
+        <div id="meta">NO IMAGE LOADED</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
